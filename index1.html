@@ -1,0 +1,511 @@
+<!DOCTYPE HTML>
+	<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>MMF</title>
+	<link rel="stylesheet" href="css/Pre-Made CSS.css">
+	<link rel="stylesheet" href="css/Extra.css">
+	<link rel="stylesheet" href="css/Parallax.css">
+	<link rel="stylesheet" href="css/Extra2.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/Fonts/Aclonica/Aclonica.css">
+	<link rel="stylesheet" href="css/Fonts/Acme/Acme.css">
+	<link rel="stylesheet" href="css/Fonts/Federant/Federant.css">
+	<link rel="stylesheet" href="css/FontAwesome/Font Awesome 4.7.min.css">
+	<link rel="shortcut icon" href="img/icons/MMFIcon.png">
+	<script src="js/navbar.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/Sidenav.js"></script>
+	<script src="js/modal.js"></script>
+	<script src="js/postbuttons.js"></script>
+	<script src="js/jquery-1.6.2.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<meta name="author" content="Sandren Troy Milante">
+		<meta name="description" content="Sandren Troy Milante:Messages">
+	<script type="text/javascript">
+
+        var counter = 4322432499;
+    
+        $(document).ready(function() {
+    
+            $(".post-buttons").click(function(){
+                counter++;
+    
+                $(".post-stats").text(counter + " Like/s");
+            });
+    
+        });
+    </script>
+	<script>
+	function loadMessages() {
+     document.getElementById("messages").innerHTML='<object type="text/html" data="messages1.html" style="width:100%; height:100%;"></object>';
+}
+</script>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Feb 15, 2019 12:00:00").getTime();
+
+// Update the count down every 1 second
+var interval = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = "Ready to publish in: " + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(interval);
+    document.getElementById("demo").innerHTML = "READY!";
+  }
+}, 1000);
+</script>
+	<style>
+		.Aclonica {font-family: "Aclonica";}
+		.Acme {font-family: "Acme";}
+		.Federant {font-family: "Federant";}
+	</style>
+	</head>
+	<body class="white" onLoad="darkMode()" onoffline="alert('No internet connection detected! You might get errors while using our site!'); console.log('[System] Offline mode'); showOfl()" onOnline="console.log('[System] Online!'); showOl();">
+	<div class="sidenav" id="mySidenav">
+				<a href="javascript:void(0)" class="closebtn" onClick="closeSidenav()">&times;</a>
+				<center>
+				<div id="mainmenu">
+				<img src="img/feeds/feed_logo1.jpg" width="100px" alt="profile" class="profile C-margin3 hover-spin">
+				<p id="special" onClick="oprofileCard()">Hi, Troy!</p>
+				<a href="javascript:void(0)" class="PB1-active" onClick="oprofileCard()">Profile <i class="fa fa-user"></i></a>
+				<br>
+				<a href="javascript:void(0)" class="PB1-active" onClick="accountSetting()">Account Settings <i class="fa fa-cog"></i></a>
+				<br>
+				<a href="javascript:void(0)" class="PB1-active" onClick="omodalMsg()">Messages <i class="fa fa-envelope"></i></a>
+				<br>
+				<a href="javascript:void(0)" class="PB1-active" onClick="openModal()">Notifications <i class="fa fa-bell"></i></a>
+				<br>	
+				<a href="javascript:void(0)" class="button" onClick="window.location.href = 'login-index.html';"><span>Log Out</span></a>
+				</div>
+				<div id="AS">
+				<a href="javascript:void(0)" class="backbtn" onClick="backAS()">&larr;</a>
+				<a href="javascript:void(0)" class="PB1-Trans" id="dm" onClick="darkMode()"><img src="img/Btn/x.png" width="50px" alt="x" > Dark Mode</a>
+				<a href="javascript:void(0)" class="PB1-Trans" id="dmc" onClick="normalMode()"><img src="img/Btn/check.png" width="50xp" alt="check"> Dark Mode</a>
+				<a href="javascript:void(0)" class="PB1-Trans" onClick="alert('Scripts failed to load! Please try again!')"><img src="img/Btn/font.png" width="50px" alt="font"> Change Font Size</a>
+				<a href="javascript:void(0)" class="PB1-Trans" onClick="alert('Scripts failed to load! Please try again!')"><img src="img/Btn/font.png" width="50px" alt="font"> Change Font Size</a>
+				<a href="javascript:void(0)" class="PB1-Trans" onClick="alert('Scripts failed to load! Please try again!')"><img src="img/Btn/font.png" width="50px" alt="font"> Change Font Size</a>
+				</div>
+				<span class="txt-white" id="version">MMF©2018, Dec. 3, 2018 | v2.1216, Jan 6, 2019: MAIN </span><br>
+				<span class="txt-white" id="version">"If the MMF Icon at the top left corner is spinning at constant speed, it means an update is being done."</span>
+				<p>Site status: <span id="demo"></span></p> 
+				<p>Progress: 27% Done!</p>
+				</center>
+			</div>
+		<div id="myModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content animate-opacity3" id="w4">
+		<span class="close" onClick="closeModal()">&times;</span>
+		<p><strong>Notifications <i class="fa fa-bell"></i></strong></p>
+		<p class="txt-grey">There are no new notifications</p>
+		</div>
+		</div>
+		<div id="msgModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content animate-opacity3" id="w5">
+		<span class="close" onClick="cmodalMsg()">&times;</span>
+		<div id="messages" style="height: 700px;">
+		<p id="ext-msgs"><strong>Messages <i class="fa fa-envelope"></i></strong></p>
+		<p class="txt-grey" id="ext-msgs2">There are no new messages. <button onClick="loadMessages()">Load Messages</button></p>
+		</div>
+		</div>
+		</div>
+		<!-- The Modal -->
+		<div id="myModal2" class="modal2">
+
+		<!-- Modal content -->
+		<div class="modal-content2">
+		<div class="modal-header2 Pad1" id="w6">
+		<span class="close2" onClick="cbottomModal()">&times;</span>
+		<center>
+		<img src="img/feeds/feed_logo1.jpg" class="profile" width="100px" alt="Profile">
+		<h2>Sandren Troy Milante</h2>
+		</center>
+		</div>
+		<div class="modal-body2 Pad1" id="w7">
+		<center>
+		<p>Beaaaar <3 T_T</p>
+		<p>CAT :(</p>
+		<br>
+		<a class="profile-button2 Pad1" href="javascript:void(0)" onClick="oprofileCard()"><img src="img/Btn/user.png" width="25px" alt="user"> Visit Profile</a> <a class="profile-button2 Pad1" href="Error423.html"><img src="img/Btn/feed.png" alt="Feed" width="25px"> View Feed</a> <a class="profile-button2 Pad1" href="messages1.html"><img src="img/Btn/email.png" alt="Feed" width="25px"> Message</a>
+		</center>
+		</div>
+		<div class="modal-footer2 Pad1" id="w8">
+		<h3>Posts</h3>
+		<center>
+		<div class="post-card post-prohibit">
+		<h3><img src="img/feeds/feed_logo1.jpg" class="profile" width="50px" alt="Profile"><span class="post-spacing"> </span> Sandren Troy Milante <span class="post-subtitle"> - is with <span class="post-tagged">Verlene Aisha Rivas</span></span></h3>
+		<center><hr></center>
+		</div>
+		<h2>Visit profile to view all posts and other infos.</h2>
+		</center>
+		</div>
+		</div>
+
+		</div>
+			<div id="myModal3" class="modal3">
+			<span class="close3 display-topright" onClick="cprofileCard()">&times;</span>
+			<div class="modal-content3">
+			<img src="img/feeds/feed_logo1.jpg" alt="Profile" style="width:100%">
+			<h1>Sandren Troy Milante</h1>
+			<p class="profileC-title">("TSH Savera")</p>
+			<p>CEO & Founder, MMF</p>
+			<div style="margin: 24px 0;">
+			<a href="#" class="profileC-a"><i class="fa fa-dribbble"></i></a> 
+			<a href="#" class="profileC-a"><i class="fa fa-twitter"></i></a>  
+			<a href="#" class="profileC-a"><i class="fa fa-linkedin"></i></a>  
+			<a href="#" class="profileC-a"><i class="fa fa-facebook"></i></a> 
+			</div>
+			<p><button class="profileC-button" onClick="window.location.href = 'Error404.html'">Contact</button></p>
+			<p><button class="profileC-button" onClick="window.location.href = 'Error423.html'">Friends</button></p>
+			<p><button class="profileC-button" onClick="window.location.href = 'Error503.html';">Games</button></p>
+			<p><a href="messages1.html"><button class="profileC-button">Messages</button></a></p>
+			<p><button class="profileC-button" onClick="openModal()">Notifications</button></p>
+			<hr>
+			<p><button class="profileC-button" onClick="window.location.href = 'Error403.html'">Admin Page</button></p>
+			<p><button class="profileC-button" onClick="window.location.href = 'Error423.html'">Feed</button></p>
+			</div>
+			<div class="modal-content4" id="profile-container">
+			<h2 class="txt-grey">- - - - -Posts- - - - - </h2>
+			<center>
+				<div class="modal-content5">
+				<h3><img src="img/feeds/feed_logo1.jpg" class="profile" width="50px" alt="Profile"><span class="post-spacing"> </span> Sandren Troy Milante <span class="post-subtitle"> - is with <span class="post-tagged">Verlene Aisha Rivas</span></span></h3>
+				<center><hr class="no-padding"></center>
+				<img src="img/Posts/Post1.jpg" alt="Post1" class="imgpost-p">
+				<center><hr class="no-padding"></center>
+				<p><a class="post-buttons" href="javascript:void(0)" id="likeMe"><img src="img/Btn/like.png" width="25px" alt="Love"> Like</a></p>
+				<center><hr class="no-padding"></center>
+				<p class="post-stats" id="postStats">0 Like/s</p>
+				</div>
+				<div class="modal-content5">
+				<h3><img src="img/feeds/feed_logo1.jpg" class="profile" width="50px" alt="Profile"><span class="post-spacing"> </span> Sandren Troy Milante <span class="post-subtitle"> - is with <span class="post-tagged">Verlene Aisha Rivas</span></span></h3>
+				<center><hr class="no-padding"></center>
+				<img src="img/Posts/Post1.jpg" alt="Post1" class="imgpost-p">
+				<center><hr class="no-padding"></center>
+				<p><a class="post-buttons" href="javascript:void(0)" id="likeMe"><img src="img/Btn/like.png" width="25px" alt="Love"> Like</a></p>
+				<center><hr class="no-padding"></center>
+				<p class="post-stats" id="postStats">0 Like/s</p>
+				</div>
+				<div class="modal-content5">
+				<h3><img src="img/feeds/feed_logo1.jpg" class="profile" width="50px" alt="Profile"><span class="post-spacing"> </span> Sandren Troy Milante <span class="post-subtitle"> - is with <span class="post-tagged">Verlene Aisha Rivas</span></span></h3>
+				<center><hr class="no-padding"></center>
+				<img src="img/Posts/Post1.jpg" alt="Post1" class="imgpost-p">
+				<center><hr class="no-padding"></center>
+				<p><a class="post-buttons" href="javascript:void(0)" id="likeMe"><img src="img/Btn/like.png" width="25px" alt="Love"> Like</a></p>
+				<center><hr class="no-padding"></center>
+				<p class="post-stats" id="postStats">0 Like/s</p>
+				</div>
+				<div class="modal-content5">
+				<h3><img src="img/feeds/feed_logo1.jpg" class="profile" width="50px" alt="Profile"><span class="post-spacing"> </span> Sandren Troy Milante <span class="post-subtitle"> - is with <span class="post-tagged">Verlene Aisha Rivas</span></span></h3>
+				<center><hr class="no-padding"></center>
+				<img src="img/Posts/Post1.jpg" alt="Post1" class="imgpost-p">
+				<center><hr class="no-padding"></center>
+				<p><a class="post-buttons" href="javascript:void(0)" id="likeMe"><img src="img/Btn/like.png" width="25px" alt="Love"> Like</a></p>
+				<center><hr class="no-padding"></center>
+				<p class="post-stats" id="postStats">0 Like/s</p>
+				</div>
+				<div class="modal-content5">
+				<h3><img src="img/feeds/feed_logo1.jpg" class="profile" width="50px" alt="Profile"><span class="post-spacing"> </span> Sandren Troy Milante <span class="post-subtitle"> - is with <span class="post-tagged">Verlene Aisha Rivas</span></span></h3>
+				<center><hr class="no-padding"></center>
+				<img src="img/Posts/Post1.jpg" alt="Post1" class="imgpost-p">
+				<center><hr class="no-padding"></center>
+				<p><a class="post-buttons" href="javascript:void(0)" id="likeMe"><img src="img/Btn/like.png" width="25px" alt="Love"> Like</a></p>
+				<center><hr class="no-padding"></center>
+				<p class="post-stats" id="postStats">0 Like/s</p>
+				</div>
+				</center>
+				<br>
+				<h2 class="txt-grey">- - - - -No More Posts to Show- - - - - </h2>
+			</div>
+			</div>
+		<div class="parallax img1 main">
+			<header>
+				<nav id="navbar">
+					<a onclick="openSidenav()" class="sidenav-toggle fa-spin"><img src="img/icons/MMFIcon-ws.png" alt="MMF" width="50px"></a>
+					<a href="index.html" class="PB1-active Margin"><img src="img/Btn/Home-b.png" alt="Home" width="25px"> Home</a>
+					<a href="about.html" class="PB1-Trans Margin"><img src="img/Btn/aboutus-w.png" alt="about" width="25px"> About</a>
+					<a href="javascript:void(0)" class="PB1-Trans Margin" onClick="alert('Content Unavailable!')"><img src="img/Btn/dev-w.png" alt="Dev" width="25px"> Dev Team</a>
+					<a href="javascript:void(0)" class="PB1-Trans Margin" onClick="alert('Content Unavailable!')"><img src="img/Btn/contact-w.png" alt="Contact" width="25px"> Contact Us</a>
+					<a href="javascript:void(0)" class="PB1-Trans Margin float-right" onClick="obottomModal()"><img src="img/feeds/feed_logo1.jpg" alt="Profile" class="profile" width="50px"></a>
+				</nav>
+			</header>
+			<div class="display-middle txt-white">
+				<h2><img src="img/icons/MMFIcon.png" alt="MMF" width="50px"> <span class="Acme">MMF</span></h2>
+			</div>
+		</div>
+		
+		<!--Content-->
+		<div class="bg-reg white txt-grey" id="w1">
+		<br>
+		<center>
+			<h3 class="txt-grey">About this</h3>
+			<p>Lorem Ipsum</p>
+			<p class="Margin">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas mauris gravida turpis convallis, vel feugiat dui posuere.
+			Nulla egestas libero vitae ligula dictum mattis. Donec metus purus, tincidunt nec massa et, efficitur condimentum risus. Nulla facilisi.
+			Sed ut tincidunt nisi. Aenean eu ante eget elit dignissim congue. Donec euismod vestibulum augue, hendrerit volutpat dolor dignissim sed.
+			Aliquam ante leo, imperdiet at risus a, ultrices pellentesque odio. Quisque cursus nisi non ultricies blandit. Maecenas a enim nunc. 
+			Vivamus tempus libero eros, sit amet luctus odio aliquet vel. Mauris nulla nisi, vestibulum sed fermentum gravida, tempor sagittis magna. 
+			Integer in metus sit amet leo tempor sollicitudin a et sapien. Etiam nibh elit, dapibus eleifend nibh id, dapibus porttitor sapien.
+			</p>
+			<div class="half">
+			<br>
+				<h5>Sample Feed Image</h5>
+				<br>
+				<img src="img/Header/header1.jpg" alt="Heading1" width="600px" class="opachover">
+				
+				<br><br><br>
+				<p class="Margin">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas mauris gravida turpis convallis, vel feugiat dui posuere.
+				Nulla egestas libero vitae ligula dictum mattis. Donec metus purus, tincidunt nec massa et, efficitur condimentum risus. Nulla facilisi.
+				Sed ut tincidunt nisi. Aenean eu ante eget elit dignissim congue. Donec euismod vestibulum augue, hendrerit volutpat dolor dignissim sed.
+				Aliquam ante leo, imperdiet at risus a, ultrices pellentesque odio. Quisque cursus nisi non ultricies blandit. Maecenas a enim nunc. 
+				Vivamus tempus libero eros, sit amet luctus odio aliquet vel. Mauris nulla nisi, vestibulum sed fermentum gravida, tempor sagittis magna. 
+				Integer in metus sit amet leo tempor sollicitudin a et sapien. Etiam nibh elit, dapibus eleifend nibh id, dapibus porttitor sapien.
+				</p>
+			</div>
+			<div class="half">
+			<br><br><br>
+				<p class="Margin">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas mauris gravida turpis convallis, vel feugiat dui posuere.
+				Nulla egestas libero vitae ligula dictum mattis. Donec metus purus, tincidunt nec massa et, efficitur condimentum risus. Nulla facilisi.
+				Sed ut tincidunt nisi. Aenean eu ante eget elit dignissim congue. Donec euismod vestibulum augue, hendrerit volutpat dolor dignissim sed.
+				Aliquam ante leo, imperdiet at risus a, ultrices pellentesque odio. Quisque cursus nisi non ultricies blandit. Maecenas a enim nunc. 
+				Vivamus tempus libero eros, sit amet luctus odio aliquet vel. Mauris nulla nisi, vestibulum sed fermentum gravida, tempor sagittis magna. 
+				Integer in metus sit amet leo tempor sollicitudin a et sapien. Etiam nibh elit, dapibus eleifend nibh id, dapibus porttitor sapien.
+				</p>
+			<br><br>
+				<h5>Sample Feed Image</h5>
+				<br>
+				<img src="img/Header/header1.jpg" alt="Heading1" width="600px" class="opachover">
+		</center>
+		</div>
+		</div>
+		<div class="parallax3 img11">
+		<center>
+			<h1 class="txt-white Pad2 txt-shadow1">Development Team</h1>
+		</center>
+		</div>
+		<div class="bg-reg white dev" id="w2">
+		<br><br>
+		<h1 class="heading1">Founders</h1>
+		<center>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Founder</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Web Developer</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Programmer</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Designer</span></p></center>
+			</div>
+			<div class="box">
+				<center><p><img src="img/feeds/feed_logo1.jpg" width="50px" class="profile" alt="Troy"> Sandren Troy L. Milante <span class="span1">MMF, Encoder</span></p></center>
+			</div>
+			
+		</div>
+		<div class="parallax3 img13">
+		<center>
+			<h1 class="txt-white Pad2 txt-shadow1">Contact Us/ Apply services</h1>
+		</center>
+		</div>
+		<div class="bg-reg3 white" id="w3">
+		<br><br>
+		<center>
+		<h2 class="Acme">Subscribe to our newsletter to get the latest updates</h2>
+			<form name="NL">
+				<label for="lemail" class="Acme"><h3> Email</h3></label><br>
+				<input type="email" id="lemail" name="email" placeholder="Please enter your email" class="inputtext" required>
+				<br><br>
+				<input type="submit" value="Submit" class="inputsubmit">
+			</form>
+		</center>
+			</div>
+			
+		<!--Footer-->
+		<footer class="txt-white center" id="footer">
+			<div class="black Pad3">
+				<h2 class="Aclonica"><img src="img/icons/MMFIcon.png" width="100px" alt="MMF"> MMF Org.</h2>
+				<h3 class="Acme">All rights reserved to their respective owners</h3>
+				<br><br><br>
+<table id="customers">
+  <tr>
+    <th>Partner Company:</th>
+    <th>Website:</th>
+    <th>Country:</th>
+  </tr>
+  <tr>
+    <td>MMF Alpha</td>
+    <td>www.mmfalpha.com</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>MMF Delta</td>
+    <td>www.mmfdelta.com</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>MM Prime Holdings Corp.</td>
+    <td>www.mmph.mmf.com</td>
+    <td>Philippines</td>
+  </tr>
+  <tr>
+    <td>MMF Programming Centre</td>
+    <td>www.mmfpc.com</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>MM Securities</td>
+    <td>www.mmsecurities.mmf.com</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Königlich Essen Databases</td>
+    <td>www.koniglichessen.mmf.com</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars Entertainmnet</td>
+    <td>www.lbacchusw.mmf.com</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti GPD</td>
+    <td>www.magazziniargpd.mmf.com</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South Auth</td>
+    <td>www.nsauth.mmf.com</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>MMF Event Management</td>
+    <td>www.mmfem.com</td>
+    <td>France</td>
+  </tr>
+</table>
+		<h4>Special Thanks to:</h4>
+		<a href="https://www.flaticon.com" style="font-weight: bold;">Flaticons</a><br><br>
+			<img src="img/icons/freepik.png" alt="freepik" width="50px"><div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div><br>
+			<img src="img/icons/smashicons.png" alt="smashicons" width="50px"><div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div><br>
+			<hr>
+		<a href="https://www.jquery.com" style="font-weight: bold">jQuery</a><br>
+		<a href="https://code.jquery.com/jquery-1.6.2.js">jQuery 1.6.2 Code here!</a><br>
+			<hr>
+		<a href="https://www.w3schools.com" style="font-weight: bold;">W3Schools</a>
+			</div>
+		</footer>
+	<div id="error">
+		<div class="display-middle">
+		<h1> Error 409: Conflict! </h1>
+		<h3>Please adjust your current resolution to optimal view. Doing so will allow you to view our site</h3>
+		</div>
+	</div>
+	<button class="open-button2" onclick="openForm()" id="trigger"><span><img src="img/icons/MMFIcon-ws.png" alt="help" width="50px" class="fa-spin"> </span></button>
+	<div class="chat-popup2" id="myForm">
+	
+  <form class="form-container2" onSubmit="sendFeedback(); clearDisp() ; return false;">
+    <div id="main">
+	<h1 style="text-align: center; width: 100%; padding: 5px; background-color: #818181; color:white;">Help</h1>
+	<p><strong>Tips:</strong></p>
+	<ul type="cirlce">
+	<li>If the display looks messy or unfitted, try zooming out your browser's display to 75%.</li>
+	<li>Site's default display resolution is 1366px x 667px.</li>
+	<li>If the MMF Icon is spinning at constant speed, it means an update is being done.</li>
+	</ul>
+	<div>
+	<center>
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+	</center>
+	</div>
+	
+
+    <label for="msg" style="color: black;"><b>Feedback Here!</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn2">Send</button>
+    <button type="button" class="btn2 cancel2" onclick="closeForm()">Close</button>
+	</div>
+	 <div id="sendmsg"></div>
+	 <div id="sendmsg2"></div>
+	 <div id="sendmsg3"></div>
+	 <div id="sendmsg1"></div>
+</div>
+  </form>
+  <div class="online" id="ol">
+	<p> Online! <span onClick="hideOl()">&times;</span></p>
+  </div>
+  <div class="offline" id="ofl">
+	<p> Offline! <span onClick="hideOfl()">&times;</span></p>
+  </div>
+  
+ 
+	</body>
+	</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+		<title> Error 408: Request Timeout </title>
+		<link rel="stylesheet" href="css/ErrorPages/styles.css">
+		<link rel="stylesheet" href="css/Fonts/Aclonica/Aclonica.css">
+		<link rel="stylesheet" href="css/Fonts/Acme/Acme.css">
+		<link rel="stylesheet" href="css/Fonts/Federant/Federant.css">
+		<style>
+		.Aclonica {font-family: "Aclonica"}
+		.Federant {font-family: "Federant"}
+		.Acme {font-family: "Acme"}
+		</style>
+		<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+<script>
+function showupList() {
+	document.getElementById("myUL").style.display = "block";
+}
+</script>
+<script>
+function hideoutList() {
+	document.getElementById("myUL").style.display = "none";
+}
+</script>
+<script>
+//Conversation's Loader
+var load;
+
+function loadSidenav() {
+  load = setTimeout(showPage, 5000);
+}
+
+function showPage() {
+  document.getElementById("errorSidenav").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}
+</script>
+		</head>
+		
+		<body onLoad="loadSidenav(); console.error('[System] Error 408! Request Timeout! This error page is showed when the server does not receive any data from you within the time alotted for the server to wait. For further information, you can read our statement on the right side of the error page. Thank you! <3')"">
+		<div class="bg">
+		<button class="button animated bounceInUp"><img src="img/icons/MMFIcon.png" alt="MMF" width="50px" class="topleft"><span class="Acme"></span></button>
+		<div class="feed animated slideInLeft">
+		<h4 class="main-msg">Error 408: Request Timed Out!</h4>
+		<p class="submain-msg">"Oops! Looks like you've reached the time limit without sending any data!"</p>
+		<p class="apology-msg">Sorry for inconvenience, you can report this issues by clicking the link! &rarr; <a href="javascript:void(0)" onClick="alert('Unavailable!')">www.feedback.mmf.com</a></p>
+		<p class="details-msg">Error Code: ERR_REQUEST_TIMED_OUT | Report No.: <span id="demo"></span></p>
+		<p class="credit-msg" style="text-align: center;">Powered by: MMF<br>Created by: Sandren Troy Milante<br>Special Thanks to: Icongeek26 on Flaticons</p>
+		<img src="img/error/Feed_408.jpg" alt="Feed404" height="300px" width="300px;">
+		</div>
+		</div>
+		<div class="Error-message" style="overflow: hidden;">
+			<div class="loaderMMF" id="errorSidenav"></div>
+			<div id="main" class="animated bounceInUp">
+			<center><img src="img/icons/408.png" alt="404" width="50px" class="icon"><center>
+			<h4 class="Federant">Error 408: Request Timed Out</h4>
+			<p style="font-size: 14px;">Looks like you don't send any data before the time runs out!</p>
+			<p style="padding-left: 5px; padding-right: 5px; font-size: 14px">"The server timed out waiting for the request. According to HTTP specifications: "The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time." -Wikipedia</p>
+			<p>Try to search it again here:</p>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" onFocus="showupList()">
+
+			<ul id="myUL" class="animated bounceInUp">
+			<li><a href="javascript:void(0)" onClick="hideoutList()" style="color: red;">&times; Close</a></li>
+			<li><a href="Error404.html">Verlene</a></li>
+			<li><a href="Error404.html">Troy</a></li>
+
+			<li><a href="Error404.html">Edward</a></li>
+			<li><a href="Error404.html">Gab</a></li>
+
+			<li><a href="Error404.html">Reign</a></li>
+			<li><a href="Error404.html">Eirik</a></li>
+			<li><a href="Error404.html">MMF</a></li>
+			</ul>
+			<p class="Aclonica">Powered by: <img src="img/icons/MMFIcon.png" width="20px" alt="MMF"> <u>MMF</u></p>
+			</div>
+		</div>
+		<script>
+		document.getElementById("demo").innerHTML = " MMFRIN - " + Math.floor(Math.random() * 100000) + " - " + Math.floor(Math.random() * 100000) + " - " + Math.floor(Math.random() * 100000) + " - " + Math.floor(Math.random() * 100000);
+		</script>
+		</body>
+		
+	</html>

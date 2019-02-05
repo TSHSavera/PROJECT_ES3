@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+		<title>MMF: Login</title>
+		<link rel="stylesheet" href="css/Pre-Made CSS.css">
+		<link rel="stylesheet" href="css/Extra.css">
+		<link rel="stylesheet" href="css/Extra2.css">
+		<link rel="stylesheet" href="css/Fonts/Aclonica/Aclonica.css">
+		<link rel="stylesheet" href="css/Fonts/Acme/Acme.css">
+		<link rel="stylesheet" href="css/Fonts/Federant/Federant.css">
+		<link rel="stylesheet" href="css/FontAwesome/Font Awesome 4.7.min.css">
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="shorcut icon" href="img/icons/MMFIcon.png">
+		<script src="js/jquery-1.6.2.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/HC.js"></script>
+		<script src="js/login-system.js"></script>
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="css/process-loader.css">
+	<style>
+		.Aclonica {font-family: "Aclonica";}
+		.Acme {font-family: "Acme";}
+		.Federant {font-family: "Federant";}
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      html, body {
+  height: 100%;
+}
+
+#process-loader  {
+  animation: rotate 1s linear infinite;
+  height: 50px;
+  width: 50px;
+}
+
+#process-loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+#process-loader:before {
+  animation: ball1 3s infinite;
+  background-color: #cb2025;
+  box-shadow: 30px 0 0 #f8b334;
+  margin-bottom: 10px;
+}
+#process-loader:after {
+  animation: ball2 3s infinite;
+  background-color: #00a096;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0.8);
+    -moz-transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: rotate(720deg) scale(0.8);
+    -moz-transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #f8b334;
+  }
+  50% {
+    box-shadow: 0 0 0 #f8b334;
+    margin-bottom: 0;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #97bf0d;
+    margin-top: 0;
+  }
+}
+	</style>
+	<script src="js/prefixfree.min.js"></script>
+		</head>
+
+		<body onError="console.warn('JavaScript error detected! More errors are expected to pop out.')">
+<div id="main-body" class="img1">
+<img src="img/icons/MMFIcon.png" width="40px" alt="logo" class="display-topleft" style="margin: 5px;">
+	<div class="display-middle login-container swap">
+	<div id="lgnsgnp-container" class="swap">
+	<h3 class="Federant" id="Logo"><img src="img/icons/MMFIcon.png" width="50px" alt="logo"> | MMF</h3>
+	<h4 id="info1">Social Media Platform</h4>
+	<button type="button" class="LinSup-btn LinSup" id="login-btn" onClick="logIn();">Login</button><p id="or">Or</p><button type="button" class="LinSup-btn LinSup2" id="signup-btn" onClick="signUp()">Signup</button>
+	<a href="javascript:void(0)" id="forgot-password" onClick="forgotPass();">Forgot Password?</a>
+	<h5 id="info2">Login or Signup</h5>
+		<h4 id="login-type" class="Federant">Login</h4>
+		<form id="login" class="swap" action="javascript:void(0)" onSubmit="submitLogin()">
+			<p id="username-label" class="Federant">Username: <input type="text" name="username" id="username" class="Acme"></p>
+			<p id="pswrd-label" class="Federant">Password: <input type="password" name="password" id="pswrd" class="Acme"></p>
+			<button type="submit" id="login-button" class="Federant">Login</button>
+		</form>
+		<form id="signup" class="swap">
+			<p id="inco">Sorry, but signup is currently unavailable at this moment. Please try again later!</p>
+		</form>
+	</div>
+	<div class="swap display-middle" id="Troy">
+		<img src="img/feeds/feed_logo1.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Hi <span style="font-weight: bold;">Sandren Troy Milante</span>! Welcome to MMF!</h4>
+		<h5>What do you want to do next?</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div class="swap display-middle" id="Edward">
+		<img src="img/feeds/feed_logo3.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Hi <span style="font-weight: bold;">John Edward De Guzman</span>! Welcome to MMF!</h4>
+		<h5>What do you want to do next?</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div class="swap display-middle" id="Verlene">
+		<img src="img/feeds/feed_logo2.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Hi <span style="font-weight: bold;">Verlene Aisha Rivas</span>! Welcome to MMF!</h4>
+		<h5>What do you want to do next?</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div class="swap display-middle" id="Reign">
+		<img src="img/feeds/feed_logo5.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Hi <span style="font-weight: bold;">Reign Vallejo</span>! Welcome to MMF!</h4>
+		<h5>What do you want to do next?</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div class="swap display-middle" id="Gab">
+		<img src="img/feeds/feed_logo4.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Hi <span style="font-weight: bold;">Marc Gab Cruz</span>! Welcome to MMF!</h4>
+		<h5>What do you want to do next?</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div class="swap display-middle" id="Eirik">
+		<img src="img/feeds/feed_logo6.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Hi <span style="font-weight: bold;">John Eirik Reyes</span>! Welcome to MMF!</h4>
+		<h5>What do you want to do next?</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div class="swap display-middle" id="Andrei">
+		<img src="img/feeds/feed_logo7.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Hi <span style="font-weight: bold;">David Andrei San Jose</span>! Welcome to MMF!</h4>
+		<h5>What do you want to do next?</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div class="swap display-middle" id="MMFAdmin">
+		<img src="img/feeds/feed_logo1.jpg" width="50px" alt="Admin" style="border-radius: 50%; margin-top: 5px;">
+		<h4>Welcome <span style="font-weight: bold;">Admin!</span>! Here is your control panel!</h4>
+		<h5>Options</h5>
+		<button type="button" class="LinSup-btn2">Open Feed</button>
+		<button type="button" class="LinSup-btn2" onClick="mainPage()">Main Page</button>
+		<button type="button" class="LinSup-btn2">Manage Messages</button>
+		<button type="button" class="LinSup-btn2" onClick="logOut()">Logout MMF</button>
+	</div>
+	<div id="forgot-password-container" class="swap">
+	<span id="back-lgnfrm" onClick="backlgnfrm()">&larr; Back</span>
+		<p>Forgot password? Please enter your username and enter the SHA512 Code given on your registration.</p>
+		<form action="javascript:void(0)" onSubmit="" id="recovery-form">
+			<p>Username:</p>
+			<input type="text" class="form-field1 Acme" id="rdun">
+			<p>SHA512 Code</p>
+			<input type="text" class="form-field2 Acme" id="rdhash"><br><br>
+			<center><button type="submit" id="submit-recover" class="LinSup-btn" onClick="checkArf()">Recover account</button>
+				<p><strong>Note:</strong> We only alllow one recovery each session</p>
+			</center>
+		</form>
+		</div>
+		<div id="recovery-details" class="swap">
+			<center><h4><img src="img/icons/MMFIcon.png" width="50px" alt="logo" style="margin: 10px;"> MMF HC</h4></center>
+			<center><h4 id="rd-status">Account Recovered Successfully!</h4></center>
+			<p style="text-align: center;">Reference No:<span class="ref-nos" style="font-weight: bold;"></span></p>
+			<p style="text-align: center;">Full Name: <span id="rd-name" style="font-weight: bold;"></span></p>
+			<p style="text-align: center;">Username: <span id="rd-username" style="font-weight: bold;"></span></p>
+			<p style="text-align: center;">Password: <span id="rd-password" style="font-weight: bold;"></span></p>
+			<center><button type="button" id="back-rd" onClick="backRd()" style="text-align: center;">&larr; Back</button>
+			<p> Copyright MMF © 2019. All rights reserved to their respective owners. Programmed by Sandren Troy Milante</p></center>
+		</div>
+		<div id="reload-pg" style="display: none; margin: 15px;"><center><h4><img src="img/icons/MMFIcon.png" width="50px" alt="logo" style="margin: 10px;"> MMF HC</h4><br><h3>Please reload the page to continue!</h3><br><h4>Error Code: MMFERR_ACCESS_DENIED</h4></center></div>
+		<div class="txt-white" style="font-size: 12px; position: absolute; bottom: 0; margin: 10px;">Tip: Please don't click any button/s if the process loader is shown.</div>
+	</div>
+	<p style="margin-left: 5px; margin-bottom: 3px; font-size: 12px;"class="display-bottomleft txt-white">All rights reserved to their respective owners. <br> ©MMF 2019 <br> Programmed by: Sandren Troy Milante <br> Designed by: John Edward De Guzman</p>
+</div>
+	<div id="process-loader" style="position: absolute; bottom: 25px; right: 25px; display: none;" class="swap"></div>
+	<script src="js/jquery2.1.3.min.js"></script>
+		</body>
+
+	</html>

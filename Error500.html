@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+		<title> Error 500: Internal Server Error </title>
+		<link rel="stylesheet" href="css/ErrorPages/styles.css">
+		<link rel="stylesheet" href="css/Fonts/Aclonica/Aclonica.css">
+		<link rel="stylesheet" href="css/Fonts/Acme/Acme.css">
+		<link rel="stylesheet" href="css/Fonts/Federant/Federant.css">
+		<link rel="stylesheet" href="css/Loaders/Loader 1.css">
+		<script src="js/jquery-3.0.0.js"></script>
+		<script src="js/reportgenerator.js"></script>
+		<style>
+		.Aclonica {font-family: "Aclonica"}
+		.Federant {font-family: "Federant"}
+		.Acme {font-family: "Acme"}
+		</style>
+		<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+<script>
+function showupList() {
+	document.getElementById("myUL").style.display = "block";
+}
+</script>
+<script>
+function hideoutList() {
+	document.getElementById("myUL").style.display = "none";
+}
+</script>
+<script>
+//Conversation's Loader
+var load;
+
+function loadSidenav() {
+  load = setTimeout(showPage, 5000);
+}
+
+function showPage() {
+  document.getElementById("errorSidenav").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}
+</script>
+		</head>
+		
+		<body onLoad="loadSidenav(); generateReportnos(); console.error('[System] Error 500! Internal Server Error! This error page is showed when the server encountered a unknown problem that forced us to close the connection. For further information, you can read our statement on the right side of the error page. Thank you! <3')">
+		<div id="reportModal">
+			<div id="loader-pulse">
+			<div class="pulse"></div>
+			<p class="loading-text">Loading...</p>
+			</div>
+			<div id="reportmodalContent" class="animated bounceIn">
+			<span id="closereport" onClick="creportModal()">&times;</span>
+			<h4>Error Report No#: <span class="demo"></span> <a href="#GenerateErrorReport" class="new-letter" onClick="stringGennos(); stringGen(); generateString(); stringGen2(); generateString2(); genStatusp()">Generate error report</a></h4>
+			<p id="errorcontent"><span class="errorreportnos"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter2"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter2"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter2"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter2"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter2"></span>
+			<br><span class="errornos"></span>
+			<br><span class="random-letter"></span>
+			</p>
+			<p id="genStatus">Generating...</p>
+			</div>
+		</div>
+		<div class="bg">
+		<button class="button animated bounceInUp"><img src="img/icons/MMFIcon.png" alt="MMF" width="50px" class="topleft"><span class="Acme"></span></button>
+		<div class="feed2 animated slideInLeft" id="mainfeed">
+		<h4 class="main-msg2">Error 500: Internal Server Error</h4>
+		<p class="submain-msg2">"Oops! Server encountered a unknown problem. We've already sent highly trained monkeys to deal with the issue"</p>
+		<p class="apology-msg2">Sorry for inconvenience, you can report this issues by clicking the link! &rarr; <a href="javascript:void(0)" onClick="alert('Unavailable!')">www.feedback.mmf.com</a></p>
+		<p class="details-msg2">Error Code: ERR_INTERNAL_SERVER_! | Report No.: <span class="demo"></span> | <a href="javascript: void(0)" onClick="oreportModal(); pulseLoader()">Open report file</a></p>
+		<p class="credit-msg2" style="text-align: center;">Powered by: MMF<br>Created by: Sandren Troy Milante</p>
+		<img src="img/error/feed_500_3.jpg" alt="Feed500" height="300px" style="margin-left: 12px;">
+		</div>
+		</div>
+		<div class="Error-message">
+			<div class="loaderMMF" id="errorSidenav"></div>
+			<div id="main" class="animated bounceInUp">
+			<center><img src="img/icons/500.png" alt="505" width="50px" class="icon"><center>
+			<h4 class="Federant">Error 500: Internal Server Error</h4>
+			<p>The server encountered a problem that closed the connection</p>
+			<p style="padding-left: 5px; padding-right: 5px;">"A generic error message, given when an unexpected condition was encountered and no more specific message is suitable." -Wikipedia</p>
+			<p>Try to search it again here:</p>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" onFocus="showupList()">
+
+			<ul id="myUL" class="animated bounceInUp">
+			<li><a href="javascript:void(0)" onClick="hideoutList()" style="color: red;">&times; Close</a></li>
+			<li><a href="Error404.html">Verlene</a></li>
+			<li><a href="Error404.html">Troy</a></li>
+
+			<li><a href="Error404.html">Edward</a></li>
+			<li><a href="Error404.html">Gab</a></li>
+
+			<li><a href="Error404.html">Reign</a></li>
+			<li><a href="Error404.html">Eirik</a></li>
+			<li><a href="Error404.html">MMF</a></li>
+			</ul>
+			<p class="Aclonica">Powered by: <img src="img/icons/MMFIcon.png" width="20px" alt="MMF"> <u>MMF</u></p>
+			</div>
+		</div>
+		</body>
+		
+	</html>

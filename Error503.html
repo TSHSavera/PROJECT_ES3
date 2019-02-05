@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+		<title> Error 503: Service Unavailable </title>
+		<link rel="stylesheet" href="css/ErrorPages/styles.css">
+		<link rel="stylesheet" href="css/Fonts/Aclonica/Aclonica.css">
+		<link rel="stylesheet" href="css/Fonts/Acme/Acme.css">
+		<link rel="stylesheet" href="css/Fonts/Federant/Federant.css">
+		<style>
+		.Aclonica {font-family: "Aclonica"}
+		.Federant {font-family: "Federant"}
+		.Acme {font-family: "Acme"}
+		</style>
+		<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+<script>
+function showupList() {
+	document.getElementById("myUL").style.display = "block";
+}
+</script>
+<script>
+function hideoutList() {
+	document.getElementById("myUL").style.display = "none";
+}
+</script>
+<script>
+//Conversation's Loader
+var load;
+
+function loadSidenav() {
+  load = setTimeout(showPage, 5000);
+}
+
+function showPage() {
+  document.getElementById("errorSidenav").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}
+</script>
+		</head>
+		
+		<body onLoad="loadSidenav(); console.error('[System] Error 503! System unreachable! This error page is showed when the server is currently down or under maintenance due to technical problems. For further information, you can read our statement on the right side of the error page. Thank you! <3')">
+		<div class="bg">
+		<button class="button animated bounceInUp"><img src="img/icons/MMFIcon.png" alt="MMF" width="50px" class="topleft"><span class="Acme"></span></button>
+		<div class="feed3 animated lightSpeedIn"><center><img src="img/error/Feed_503.jpg" alt="Feed403" height="100px" style="text-align: center; background-color: white; padding: 10px; border-radius: 5px;"></center>
+		<h4 class="main-msg4">Error 503: Service Unavailable</h4>
+		<center>
+		<p class="submain-msg3">"Aww sad. I think our main server is inactive and failed to fulfill with your request :<."</p>
+		<p class="apology-msg3">Sorry for inconvenience, you can report this issues by clicking the link! &rarr; <a href="javascript:void(0)" onClick="alert('Unavailable!')" style="color:white;">www.feedback.mmf.com</a></p>
+		<p class="details-msg3" style="text-align: center;">Error Code: ERR_SERVICE_UNAVAILABLE | Report No.: <span id="demo"></span></p>
+		</center>
+		<p class="credit-msg3" style="text-align: center;">Powered by: MMF<br>Created by: Sandren Troy Milante<br>Special Thanks to: Eucalyp on Flaticons!</p>
+		</div>
+		<div class="Error-message">
+			<div class="loaderMMF" id="errorSidenav"></div>
+			<div id="main" class="animated bounceInUp">
+			<center><img src="img/error/Feed_503.jpg" alt="503" width="50px" class="icon"><center>
+			<h4 class="Federant">Error 503: Service Unavailable!</h4>
+			<p>Server is currently down.</p>
+			<p style="padding-left: 5px; padding-right: 5px;">"The HyperText Transfer Protocol (HTTP) 503 Service Unavailable server error response code indicates that the server is not ready to handle the request." -MDN Web Docs</p>
+			<p>Try to search it again here:</p>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" onFocus="showupList()">
+
+			<ul id="myUL" class="animated bounceInUp">
+			<li><a href="javascript:void(0)" onClick="hideoutList()" style="color: red;">&times; Close</a></li>
+			<li><a href="Error404.html">Verlene</a></li>
+			<li><a href="Error404.html">Troy</a></li>
+
+			<li><a href="Error404.html">Edward</a></li>
+			<li><a href="Error404.html">Gab</a></li>
+
+			<li><a href="Error404.html">Reign</a></li>
+			<li><a href="Error404.html">Eirik</a></li>
+			<li><a href="Error404.html">MMF</a></li>
+			</ul>
+			<p class="Aclonica">Powered by: <img src="img/icons/MMFIcon.png" width="20px" alt="MMF"> <u>MMF</u></p>
+			</div>
+		</div>
+		<script>
+		document.getElementById("demo").innerHTML = " MMFRIN - " + Math.floor(Math.random() * 100000) + " - " + Math.floor(Math.random() * 100000) + " - " + Math.floor(Math.random() * 100000) + " - " + Math.floor(Math.random() * 100000);
+		</script>
+		</body>
+		
+	</html>

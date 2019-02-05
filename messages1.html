@@ -1,0 +1,601 @@
+<!DOCTYPE HTML>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<meta name="author" content="MMF">
+		<meta name="description" content="Sandren Troy Milante:Messages">
+		<!--<meta http-equiv="Refresh" content="5; url=Error503.html">-->
+		<title>Messages</title>
+		<link rel="shortcut icon" href="img/icons/MMFIcon.png">
+		<link rel="stylesheet" href="css/msgstyle.css">
+		<link rel="stylesheet" href="css/Pre-Made CSS.css">
+		<link rel="stylesheet" href="css/Extra.css">
+		<!--<link rel="stylesheet" href="css/FontAwesome2/fa/css/all.css">-->
+		<link rel="stylesheet" href="css/FontAwesome/Font Awesome 4.7.min.css">
+		<!--<script defer src="css/FontAwesome2/fa/js/all.js"></script>-->
+		<script src="js/navbar.js"></script>
+		<script src="js/jquery-1.6.2.js"></script>
+		<script>
+		
+		function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("trigger").style.display = "none";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  document.getElementById("trigger").style.display = "block";
+}
+		</script>
+		<script src="js/darkmodemsgs.js"></script>
+		<style>
+		  @keyframes show {0% {opacity: 0;} 100% {opacity: 1;}}
+.online {display: none; background-color: green; color: white; padding: 5px; border: 1px solid white; cursor: pointer; position: fixed; bottom: 23px; left: 0; width: 100px; border-radius: 5px; text-align: center; animation: show 1s; animation-fill-mode: both; font-weight: bold;}
+.offline {display: none; background-color: red; color: white; padding: 5px; border: 1px solid white; cursor: pointer; position: fixed; bottom: 23px; left: 0; width: 100px; border-radius: 5px; text-align: center; animation: show 1s; animation-fill-mode: both; font-weight: bold;}
+		</style>
+	</head>
+	<!--onError="error500()"-->
+	<body style="postion: fixed; background-color: white;" onLoad="openConvo1()" onResize="alert('Warning! Resizing browser window may cause incompatibility or UI to look unfitted!'); return false;" onoffline="alert('No internet connection detected! You might get errors while using our site!'); console.log('[System] Offline mode'); showOfl()" onOnline="console.log('[System] Online!'); showOl();">
+		<div class="send-modal" id="sendModal">
+			<span class="close-smodal" onClick="cancelSend(); console.info('Cancelled!')">&times;</span>
+			<div class="send-modal-content" id="smc">
+				<h4><span class="span-header" id="spanHeader">Message Details:</span></h4>
+				<div class="send-details">
+				<table cellpadding="20px" cellspacing="5px" class="detail-table">
+					<tr style="float: left">
+						<th>Sender:</th>
+						<td>Sandren Troy Milante</td>
+						<th>Sender Email:</th>
+						<td>("genericEmail.hide: True")</td>
+					</tr>
+					<tr style="float: right;">
+						<th>Receiver:</th>
+						<td id="receiver-name">Verlene Aisha Rivas</td>
+						<th>Receiver Email:</th>
+						<td>("visibilityEmail.hidden: True")</td>
+					</tr>
+					</table>
+					<h4> Message Content: <span id="mc-length" style="font-size: 20px; font-weight: italic;"></span></h4>
+							<div class="mtbs">
+								<form>
+								<textarea id="msgtbs" onkeyup="msgReview3()" name="limitedtextarea" onKeyDown="msgReview3()" class="maxtext" maxlength="5000" readonly></textarea>
+								</form>
+							</div>
+						<div class="advance-sdetails">
+							<h4>Advanced Details:</h4>
+							<p>Message Reference No:<span id="SMrn"></span></p>
+							<p>Msg. Centre (To be used):<span id="msgCentre"></span></p>
+							<p>Date: <span id="dateSent"></span></p>
+							<center>
+							<button onClick="showSendprogress()" class="PB1-active" style="border: 1px black solid" id="sspsend">Send</button><br>
+							<div id="myProgress">
+								<div id="myBar">0%</div>
+							</div>
+							<p id="progressText"></p>
+							</center>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="navbar-main">
+			<p><a href="index1.html"><img src="img/icons/MMFIcon-ws.png" width="25px" alt="Head" class="fa-spin"></a> Messages</p>
+		</div>
+		<div class="navbar-head" id="navhead">
+			<p><img src="img/feeds/feed_logo2.jpg" width="25px" alt="User" class="profile" id="profimg"> <span id="spanVer">Verlene Aisha Rivas</span> <a href="javascript:void(0)" class="float-right navbar-buttons">Video Call</a> <a href="javascript:void(0)" class="float-right navbar-buttons">Voice Call</a></p>
+			<p class="nbconvo-type">Email Conversations</p>
+		</div>
+		<div class="messages">
+			<!--Network status-->
+			<div class="online2" id="ol">
+	<p> Online! <span onClick="hideOl()">&times;</span></p>
+  </div>
+  <div class="offline2" id="ofl">
+	<p> Offline!</p>
+  </div>
+  <div class="offline2" id="errorUpdate">
+	<p>Can't update and display your message due to unknown error. <span onClick="hideEu()">&times;</span></p>
+  </div>
+			
+			<!--End-->
+			<button class="accordion" id="ecaccordion" onClick="openecAccordion()">+Email Conversations</button>
+			<button class="accordion" id="ecaccordion2" onClick="closeecAccordion()">-Email Conversations</button>
+			<div class="panel2" id="ecpanel">
+			<div class="msgscontainer"  onClick="openConvo1()" id="convo1">
+				<p><img src="img/feeds/feed_logo2.jpg" alt="prof" class="profileimg"> Verlene Aisha Rivas</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo2()" id="convo2">
+				<p><img src="img/feeds/feed_logo1.jpg" alt="prof" class="profileimg"> Sandren Troy Milante</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo3()" id="convo3">
+				<p><img src="img/feeds/feed_logo3.jpg" alt="prof" class="profileimg"> Edward De Guzman</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo4()" id="convo4">
+				<p><img src="img/feeds/feed_logo4.jpg" alt="prof" class="profileimg"> Marc Gab Cruz</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo5()" id="convo5">
+				<p><img src="img/feeds/feed_logo5.jpg" alt="prof" class="profileimg" height="25px"> Reign Vallejo</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo6()" id="convo6">
+				<p><img src="img/feeds/feed_logo6.jpg" alt="prof" class="profileimg" height="25px"> Eirik Sidro Reyes</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo7(); convoLoader()" id="convo7">
+				<p><img src="img/feeds/feed_logo7.jpg" alt="prof" class="profileimg"> MMF</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo8()" id="convo8">
+				<p><img src="img/feeds/feed_logo8.jpg" alt="prof" class="profileimg"> MMF Delta</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo9()" id="convo9">
+				<p><img src="img/feeds/feed_logo9.jpg" alt="prof" class="profileimg"> MMF Alpha</p>
+			</div>
+			<div class="msgscontainer" onClick="openConvo10(); msgsNormalmode()" id="convo10">
+				<p><img src="img/feeds/feed_logo7.jpg" alt="prof" class="profileimg"> David Andrei San Jose</p>
+			</div>
+		</div>
+		<button class="accordion" id="caccordion" onClick="opencAccordion()">+Chats</button>
+		<button class="accordion" id="caccordion2" onClick="closecAccordion()">-Chats</button>
+		<div class="panel" id="cpanel">
+		<p style="text-align: center">Chats isn't ready yet!</p>
+		</div>
+		<button class="accordion" id="eaccordion" onClick="openeAccordion()">+Emails</button>
+		<button class="accordion" id="eaccordion2" onClick="closeeAccordion()">-Emails</button>
+		<div class="panel" id="epanel">
+		<p style="text-align: center;">There are no emails found!</p>
+		</div>
+		<button class="accordion" id="naccordion" onClick="opennAccordion()">+Notifications</button>
+		<button class="accordion" id="naccordion2" onClick="closenAccordion()">-Notifications</button>
+		<div class="panel" id="npanel">
+		<p style="text-align: center;">You have 0 notifications</p>
+		</div>
+		</div>
+		<div class="conversation">
+		
+		<!--Marker 12: Verlene-->
+		
+		
+			<div id="convo-container1">
+			<div class="container12">
+				<img src="img/feeds/feed_logo2.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right12">11:00</span>
+			</div>
+
+			<div class="container12 darker12">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left12">11:01</span>
+			</div>
+
+			<div class="container12">
+				<img src="img/feeds/feed_logo2.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right12">11:02</span>
+			</div>
+
+			<div class="container12 darker12">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left12">11:05</span>
+			</div>
+						
+			</div>
+			
+			<!--Marker 13: Troy-->
+			
+			
+			<div id="convo-container2">
+			<div class="container13">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container13 darker13">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container13">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container13 darker13">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container13">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container13 darker13">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Marker 14: Edward-->
+			
+			
+			<div id="convo-container3">
+			<div class="container14">
+				<img src="img/feeds/feed_logo3.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container14 darker14">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container14">
+				<img src="img/feeds/feed_logo3.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container14 darker14">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container14">
+				<img src="img/feeds/feed_logo3.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container14 darker14">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Marker 15: Gab-->
+			
+			
+			<div id="convo-container4">
+			<div class="container15">
+				<img src="img/feeds/feed_logo4.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container15 darker15">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container15">
+				<img src="img/feeds/feed_logo4.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container15 darker15">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container15">
+				<img src="img/feeds/feed_logo4.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container15 darker15">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Marker 16: Reign-->
+			
+			
+			<div id="convo-container5">
+			<div class="container16">
+				<img src="img/feeds/feed_logo5.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container16 darker16">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container16">
+				<img src="img/feeds/feed_logo5.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container16 darker16">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container16">
+				<img src="img/feeds/feed_logo5.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container16 darker16">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Marker 17: Eirik-->
+			
+			
+			<div id="convo-container6">
+			<div class="container17">
+				<img src="img/feeds/feed_logo6.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container17 darker17">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container17">
+				<img src="img/feeds/feed_logo6.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container17 darker17">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container17">
+				<img src="img/feeds/feed_logo6.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container17 darker17">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Marker 18: MMF-->
+			
+			
+			<div id="convo-container7">
+			<div id="loader1">
+			<p>Tool Loading...</p>
+			<div class="loaderMMF"></div>
+			</div>
+			<div id="main-convo-container7">
+			<p style="text-align: center; font-size: 10px">Conversation is opened by clicking "Have a conversation" on help</p>
+			<div class="container18">
+				<img src="img/feeds/feed_logo7.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How may I help you?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container18 darker18">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>How to use this tool?</p>
+				<span class="time-left13">11:00</span>
+			</div>
+			<div class="container18">
+				<img src="img/feeds/feed_logo7.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">You can use MMF Messages to communicate with other people registered on any social media accounts. It is easy to use! Just sign up and click on messages and you can have a conversation with any one connected!</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container18 darker18">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! Thanks you for your help! <i class="fa fa-heart"></i></p>
+				<span class="time-left13">11:02</span>
+			</div>
+			<div class="container18">
+				<img src="img/feeds/feed_logo7.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container18 darker18">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>I just want to create beautiful sites! <i class="fa fa-heart"></i></p>
+				<span class="time-left13">11:05</span>
+			</div>
+			<div class="container18">
+				<img src="img/feeds/feed_logo7.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Great! Enjoy your day sir!</p>
+				<span class="time-right13">11:05</span>
+			</div>
+			</div>
+			</div>
+			
+			<!--Marker 19: MMF Delta-->
+			
+			
+			<div id="convo-container8">
+			<div class="container19">
+				<img src="img/feeds/feed_logo8.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container19 darker19">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container19">
+				<img src="img/feeds/feed_logo8.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container19 darker19">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container19">
+				<img src="img/feeds/feed_logo8.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container19 darker19">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Marker 20: MMF Alpha-->
+			
+			
+			<div id="convo-container9">
+			<div class="container20">
+				<img src="img/feeds/feed_logo9.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container20 darker20">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container20">
+				<img src="img/feeds/feed_logo9.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container20 darker20">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container20">
+				<img src="img/feeds/feed_logo9.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container20 darker20">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Marker 21: David Andrei San Jose-->
+			
+			
+			
+			<div id="convo-container10">
+			<div class="container21">
+				<img src="img/feeds/feed_logo7.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container21 darker21">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container21">
+				<img src="img/feeds/feed_logo7.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Hello. How are you today?</p>
+				<span class="time-right13">11:00</span>
+			</div>
+
+			<div class="container21 darker21">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" class="right" style="width:100%;">
+				<p>Hey! I'm fine. Thanks for asking!</p>
+				<span class="time-left13">11:01</span>
+			</div>
+			<div class="container21">
+				<img src="img/feeds/feed_logo7.jpg" alt="Avatar" style="width:100%;">
+				<p class="txt-black">Sweet! So, what do you wanna do today?</p>
+				<span class="time-right13">11:02</span>
+			</div>
+
+			<div class="container21 darker21">
+				<img src="img/feeds/feed_logo1.jpg" alt="Avatar" style="width:100%;" class="right">
+				<p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+				<span class="time-left13">11:05</span>
+			</div>
+			</div>
+			
+			<!--Stop-->
+			
+			<div class="compose">
+			<form id="compose" onReset="alert('Form resetted!')" onSubmit="return msgReview1();" action="#">
+			<textarea placeholder="Compose a message" name="mail" required id="composition" name="compo" class="maxtext" maxlength="5000" onkeyup="msgReview4()"></textarea> <i class="fa fa-heart tooltip send-options1" onClick="alert('Error!')" id="harthart"><span class="tooltiptext">Send a Heart</i><i class="fa fa-trash-o tooltip send-options2" onClick="resetComposition()" id="bobo"><span class="tooltiptext">Reset Composition</i><button type="submit" class="send-button" id="send" onClick="msgReview1(); stringGen(); generateString(); msgCenters(); callDate(); msgReview2()">Send</button><p class="send-options3" id="characLv"></p>
+			</form>
+			</div>
+		</div>
+		<div class="contact-info">
+			<div class="contact-head Pad1" id="contactHead">
+			<p class="txt-white"><img src="img/feeds/feed_logo2.jpg" width="50px" alt="profile" class="profile" id="chnp"> <span id="chn">Verlene Aisha Rivas</span></p>
+			<p class="profile-subtitle"> MMF Messages </p>
+			</div>
+			<div class="contact-options">
+			<center>
+				<a href="javascript:void(0)" onClick="searchQuery()" id="searchbtn"><i class="fa fa-search"></i> | Search</a><br><br>
+				<a href="#" onClick="alert('Unavailable!')" id="colorbtn"><i class="fa fa-paint-brush"></i> | Colors</a><br><br>
+				<a href="#" onClick="alert('Unavailable!')" id="nnbtn"><i class="fa fa-edit"></i> | Nicknames</a><br><br>
+				<a href="#" onClick="alert('Unavailable!')" id="notifbtn"><i class="fa fa-bell"></i> | Notifications</a>
+			</center>
+			</div>
+			<div class="media-files">
+			<p style="text-align: center; color: black" id="media-files-static">No media files found!</p>
+			</div>
+		</div>
+		<button class="open-button" onclick="openForm()" id="trigger"><span><img src="img/icons/MMFIcon-ws.png" alt="help" width="50px" class="fa-spin"> </span></button>
+
+<div class="chat-popup txt-black" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1 style="text-align: center; width: 100%; padding: 5px; background-color: goldenrod; color:white;">Help</h1>
+	<p><strong>Tips:</strong></p>
+	<ul type="cirlce">
+	<li>If the display looks messy or unfitted, try zooming out your browser's display to 75%.</li>
+	<li>Site's default display resolution is 1366x677!</li>
+	<li>If the MMF Icon is spinning at constant speed, it means an update is being done.</li>
+	<li>Clicking MMF Icon on the top left corner will navigate you back at the main page!</li>
+	</ul>
+	<div>
+	<center>
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+	</center>
+	</div>
+
+    <label for="msg" style="color: goldenrod;"><b>Feedback Here!</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn" style="background-color: goldenrod!important;">Send</button>
+    <button type="button" class="btn" style="background-color: goldenrod!important;" onClick="openConvo7()">Have a conversation!</button>
+	<button type="button" class="btn" style="background-color: goldenrod!important" onClick="msgsDarkmode()" id="dmtrigger1">Toggle Dark Mode</button>
+	<button type="button" class="btn" style="background-color: goldenrod!important; display: none;" onClick="msgsNormalmode()" id="nmtrigger1">Turn Off Dark Mode</button>
+	<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+	</body>
+	</html>
